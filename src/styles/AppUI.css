@@ -1,0 +1,15 @@
+.mi_contenedor{
+  background-color: rgb(236, 241, 246);
+}
+
+/*create a breakpoint at 768 px for .mi_contenedor*/
+@media (min-width: 768px) {
+  .mi_contenedor{
+    max-width: 768px;   
+    margin: 0 auto;
+    border: 1px solid beige;
+    margin-top: 16px;
+    margin-bottom: 32px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  }
+}
