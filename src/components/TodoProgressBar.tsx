@@ -1,7 +1,10 @@
 import React from "react";
-import { Props } from "../interfaces/interfaces";
+import { TodoContext } from "../contexts/TodoContext";
 
-function TodoProgressBar({ completedTodos, totalTodos }: Props["todoProgressBar"]) {
+function TodoProgressBar() {
+
+    const {completedTodos, totalTodos} = React.useContext(TodoContext);
+    
     const calculatePercentage = () => {
         //alert(`${completedTodos}/${totalTodos}`);
         return (completedTodos / totalTodos) * 100;

@@ -4,7 +4,7 @@ export interface FormatoTodos {
     completed: boolean,
 }
 
-
+// * con el use context ya no se usa esto. solo uso el todoItem  xD.
 export interface Props {
     appUI: {
         state: {

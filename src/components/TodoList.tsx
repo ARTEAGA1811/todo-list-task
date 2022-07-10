@@ -1,11 +1,13 @@
 import React from "react";
-import { Props } from "../interfaces/interfaces";
 import "../styles/TodoList.css";
+import { TodoContext } from "../contexts/TodoContext";
 
-function TodoList(props: Props["todoList"]) {
+function TodoList(props: any) {
+
+    const {listWord, searchValue} = React.useContext(TodoContext);
 
     // * Se crea una lista de todos
-    if (props.listLength) {
+    if (listWord.length) {
         return (
             <div className="row rounded">
                 <div className="col mb-5 rounded">
@@ -16,7 +18,7 @@ function TodoList(props: Props["todoList"]) {
             </div>
         );
         // * Si no hay tareas, y SÍ se está buscando una tarea
-    } else if (props.searchValue) {
+    } else if (searchValue) {
         return (
             <div className="row pb-5">
                 <div className="col">

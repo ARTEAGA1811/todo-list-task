@@ -7,17 +7,10 @@ import { TodoItem } from "./TodoItem";
 import { CreateTodoButton } from "./CreateTodoButton";
 import { TodoProgressBar } from "./TodoProgressBar";
 import { LoadingTasks } from "./LoadingTasks";
-import { Props } from "../interfaces/interfaces";
+import { TodoContext } from "../contexts/TodoContext";
 
-function AppUI({
-    searchValue,
-    setSearchValue,
-    completedTodos,
-    totalTodos,
-    listWord,
-    updateTodos,
-    deleteTodo,
-    state}: Props["appUI"]) {
+function AppUI() {
+    const { state, listWord, updateTodos, deleteTodo } = React.useContext(TodoContext);
     // React interpreta las llaves vacías como un Fragment.
     return (
         <>
@@ -26,19 +19,10 @@ function AppUI({
                     <Header />
                     <CreateTodoButton />
                     <hr className="border-primary border-3 opacity-50" />
-                    <TodoSearch
-                        searchValue={searchValue}
-                        setSearchValue={setSearchValue}
-                    />
+                    <TodoSearch />
 
-                    <TodoProgressBar
-                        completedTodos={completedTodos}
-                        totalTodos={totalTodos}
-                    />
-                    <TodoList
-                        listLength={listWord.length}
-                        searchValue={searchValue}
-                    >
+                    <TodoProgressBar />
+                    <TodoList>
                         {state.error && <p>Hubo un error al cargar la lista</p>}
                         {state.loading && <LoadingTasks />}
                         {(!state.loading && !state.error) &&

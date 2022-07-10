@@ -1,8 +1,10 @@
 import React from "react";
-import {Props} from "../interfaces/interfaces";
+import { TodoContext } from "../contexts/TodoContext";
 
-function TodoSearch({searchValue, setSearchValue}: Props["todoSearch"]) {
-        
+function TodoSearch() {
+
+    const { setSearchValue } = React.useContext(TodoContext);
+    
     const searchTask = (event: any) => {
         setSearchValue(event.target.value);
     };
