@@ -3,9 +3,9 @@
 }
 
 /*create a breakpoint at 768 px for .mi_contenedor*/
-@media (min-width: 768px) {
+@media (min-width: 650px) {
   .mi_contenedor{
-    max-width: 768px;   
+    max-width: 650px;   
     margin: 0 auto;
     border: 1px solid beige;
     margin-top: 16px;
