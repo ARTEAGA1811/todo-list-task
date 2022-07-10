@@ -8,9 +8,11 @@ import { CreateTodoButton } from "./CreateTodoButton";
 import { TodoProgressBar } from "./TodoProgressBar";
 import { LoadingTasks } from "./LoadingTasks";
 import { TodoContext } from "../contexts/TodoContext";
+import { ModalCreateTask } from "./ModalCreateTask";
+import { TodoCreateForm } from "./TodoCreateForm";
 
 function AppUI() {
-    const { state, listWord, updateTodos, deleteTodo } = React.useContext(TodoContext);
+    const { state, listWord, updateTodos, deleteTodo, modalOpen } = React.useContext(TodoContext);
     // React interpreta las llaves vacías como un Fragment.
     return (
         <>
@@ -37,6 +39,14 @@ function AppUI() {
                             ))
                         }
                     </TodoList>
+
+                    {
+                        modalOpen &&
+                        <ModalCreateTask >
+                            <TodoCreateForm/>
+                        </ModalCreateTask>
+
+                    }
                 </div>
             </div>
         </>

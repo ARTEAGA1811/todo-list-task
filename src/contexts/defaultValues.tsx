@@ -36,6 +36,9 @@ const defaultInitialContext: Props["appUI"] = {
     listWord: [],
     updateTodos: (id: number) => {},
     deleteTodo: (id: number) => {},
+    modalOpen: false,
+    setModalOpen: (value: boolean) => {},
+    addTodo: (text: string) => {},
 }
 
 export { todosTemporal, defaultInitialContext};

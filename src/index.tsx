@@ -12,3 +12,6 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// Se crea un modal para agregar una tarea
+// Language: typescript

@@ -15,6 +15,9 @@ function TodoProvider(props: any) {
     //Aquí guardo el valor de la búsqueda
     const [searchValue, setSearchValue] = React.useState("");
 
+    // * Aquí creo el estado para abrir y cerrar el modal.
+    const [modalOpen, setModalOpen] = React.useState(false);
+
     //ejm: 1/3
     const completedTodos: number = todos.filter((todo: FormatoTodos) => todo.completed).length;
     const totalTodos: number = todos.length;
@@ -24,6 +27,8 @@ function TodoProvider(props: any) {
     listWord = todos.filter((todo) => {
         return todo.text.toLowerCase().includes(searchValue.toLowerCase());
     });
+    //console.log("ListWord: ", listWord);
+    //console.log("Todos: ", todos);
 
     /**
      *
@@ -40,6 +45,7 @@ function TodoProvider(props: any) {
             return todo;
         });
         saveTodos(newTodos);
+        console.log(todos);  
     };
 
     /**
@@ -54,6 +60,16 @@ function TodoProvider(props: any) {
         saveTodos(newTodos);
     };
 
+    const addTodo = (text: string) => {
+        const newTodo: FormatoTodos = {
+            id: listWord.length + 1,
+            text,
+            completed: false,
+        };
+        const newTodos = [...todos, newTodo];
+        saveTodos(newTodos);
+    }
+
 
 
     return (
@@ -66,6 +82,9 @@ function TodoProvider(props: any) {
             listWord,
             updateTodos,
             deleteTodo,
+            modalOpen,
+            setModalOpen,
+            addTodo,
         }}>
             {props.children}
         </TodoContext.Provider>

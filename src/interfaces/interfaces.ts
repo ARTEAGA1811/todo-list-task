@@ -18,6 +18,9 @@ export interface Props {
         listWord: FormatoTodos[],
         updateTodos: (id: number) => void,
         deleteTodo: (id: number) => void,
+        modalOpen: boolean,
+        setModalOpen: (value: boolean) => void,
+        addTodo: (text: string) => void,
     };
 
     todoSearch: {
