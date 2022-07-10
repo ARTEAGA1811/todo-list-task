@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocalStorage } from './useLocalStorage';
 import { FormatoTodos, Props } from '../interfaces/interfaces';
-import { todosTemporales, defaultInitialContext} from './defaultValues';
+import { todosTemporal, defaultInitialContext} from './defaultValues';
 
 
 
@@ -10,7 +10,7 @@ import { todosTemporales, defaultInitialContext} from './defaultValues';
 const TodoContext = React.createContext<Props["appUI"]>(defaultInitialContext);
 
 function TodoProvider(props: any) {
-    const { item: todos, saveItem: saveTodos, state } = useLocalStorage("TODOS_V1", []);
+    const { item: todos, saveItem: saveTodos, state } = useLocalStorage("TODOS_V1", todosTemporal);
 
     //Aquí guardo el valor de la búsqueda
     const [searchValue, setSearchValue] = React.useState("");

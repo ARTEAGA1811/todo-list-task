@@ -1,25 +1,32 @@
 import { FormatoTodos, Props } from "../interfaces/interfaces";
 
-const todosTemporales: FormatoTodos[] = [
+// const todosTemporal: FormatoTodos[] = [
+//     {
+//         id: 1,
+//         text: "Hacer ejercicio",
+//         completed: false,
+//     },
+//     {
+//         id: 2,
+//         text: "Tomar curso de React",
+//         completed: true,
+//     },
+//     {
+//         id: 3,
+//         text: "Realizar el bootcamp",
+//         completed: false,
+//     },
+//     {
+//         id: 4,
+//         text: "Preparar la cena",
+//         completed: true,
+//     },
+// ];
+const todosTemporal: FormatoTodos[] = [
     {
         id: 1,
-        text: "Hacer ejercicio",
+        text: "Seguir Aprendiendo",
         completed: false,
-    },
-    {
-        id: 2,
-        text: "Tomar curso de React",
-        completed: true,
-    },
-    {
-        id: 3,
-        text: "Realizar el bootcamp",
-        completed: false,
-    },
-    {
-        id: 4,
-        text: "Preparar la cena",
-        completed: true,
     },
 ];
 
@@ -41,4 +48,4 @@ const defaultInitialContext: Props["appUI"] = {
     addTodo: (text: string) => {},
 }
 
-export { todosTemporales, defaultInitialContext};
+export { todosTemporal, defaultInitialContext};
