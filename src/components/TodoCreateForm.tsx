@@ -49,6 +49,7 @@ function TodoCreateForm() {
                 value={newTodoValue}
                 onChange={miOnChange}
                 required
+                autoFocus
                 />
 
             </div>

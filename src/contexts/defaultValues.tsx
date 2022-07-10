@@ -1,6 +1,6 @@
 import { FormatoTodos, Props } from "../interfaces/interfaces";
 
-const todosTemporal: FormatoTodos[] = [
+const todosTemporales: FormatoTodos[] = [
     {
         id: 1,
         text: "Hacer ejercicio",
@@ -41,4 +41,4 @@ const defaultInitialContext: Props["appUI"] = {
     addTodo: (text: string) => {},
 }
 
-export { todosTemporal, defaultInitialContext};
+export { todosTemporales, defaultInitialContext};
